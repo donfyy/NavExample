@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_onboarding"
+    app:startDestination="@id/onbFragmentMain">
+    <fragment
+        android:id="@+id/onbFragmentMain"
+        android:name="com.example.navexample.onboarding.OnbFragmentMain"
+        android:label="onboarding_fragment_main"
+        tools:layout="@layout/onboarding_fragment_main">
+        <action
+            android:id="@+id/action_onbFragmentMain_to_onbFragmentA"
+            app:destination="@id/onbFragmentA" />
+    </fragment>
+    <fragment
+        android:id="@+id/onbFragmentA"
+        android:name="com.example.navexample.onboarding.OnbFragmentA"
+        android:label="OnbFragmentA"
+        tools:layout="@layout/onboarding_fragment_a">
+        <action
+            android:id="@+id/action_onbFragmentA_to_onbFragmentAA"
+            app:destination="@id/onbFragmentAA" />
+    </fragment>
+    <fragment
+        android:id="@+id/onbFragmentAA"
+        android:name="com.example.navexample.onboarding.OnbFragmentAA"
+        android:label="OnbFragmentAA"
+        tools:layout="@layout/onboarding_fragment_a_a">
+        <action
+            android:id="@+id/action_onbFragmentAA_to_onbFragmentMain"
+            app:popUpTo="@id/onbFragmentMain"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

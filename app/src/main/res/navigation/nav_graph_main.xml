@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment2">
+    <fragment
+        android:id="@+id/mainFragment2"
+        android:name="com.example.navexample.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment2_to_fragmentA"
+            app:destination="@id/fragmentA" />
+        <action
+            android:id="@+id/action_mainFragment2_to_fragmentB"
+            app:destination="@id/fragmentB" />
+        <action
+            android:id="@+id/action_mainFragment2_to_dialogFragmentA"
+            app:destination="@id/dialogFragmentA" />
+        <action
+            android:id="@+id/action_mainFragment2_to_nav_graph_onboarding"
+            app:destination="@id/nav_graph_onboarding" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentA"
+        android:name="com.example.navexample.fragment.FragmentA"
+        android:label="fragment_a"
+        tools:layout="@layout/fragment_a">
+        <action
+            android:id="@+id/action_fragmentA_to_fragmentAA"
+            app:destination="@id/fragmentAA" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentB"
+        android:name="com.example.navexample.fragment.FragmentB"
+        android:label="fragment_b"
+        tools:layout="@layout/fragment_b" />
+    <dialog
+        android:id="@+id/dialogFragmentA"
+        android:name="com.example.navexample.fragment.dialog.DialogFragmentA"
+        android:label="fragment_dialog_a"
+        tools:layout="@layout/fragment_dialog_a" />
+    <fragment
+        android:id="@+id/fragmentAA"
+        android:name="com.example.navexample.fragment.FragmentAA"
+        android:label="fragment_a_a"
+        tools:layout="@layout/fragment_a_a" >
+        <action
+            android:id="@+id/action_fragmentAA_to_fragmentAAA"
+            app:destination="@id/fragmentAAA" />
+    </fragment>
+    <action
+        android:id="@+id/action_back_to_main"
+        app:popUpTo="@id/mainFragment2"
+        />
+<!--    app:popUpToInclusive="true" todo:从AA返回到Main后，在从Main跳转就抛异常了
+java.lang.IllegalArgumentException: navigation destination com.example.navexample:id/action_mainFragment2_to_fragmentA is unknown to this NavController-->
+    <action
+        android:id="@+id/action_back_to_a_exclusive"
+        app:popUpTo="@id/fragmentA" />
+    <action
+        android:id="@+id/action_back_to_a_inclusive"
+        app:popUpTo="@id/fragmentA"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/fragmentAAA"
+        android:name="com.example.navexample.fragment.FragmentAAA"
+        android:label="fragment_a_a_a"
+        tools:layout="@layout/fragment_a_a_a" />
+    <include app:graph="@navigation/nav_graph_onboarding" />
+</navigation>
