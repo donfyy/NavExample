@@ -1,12 +1,8 @@
-package com.example.navexample.fragment;
+package com.example.navexample.main;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,10 +12,10 @@ import com.example.navexample.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MainFragment#newInstance} factory method to
+ * Use the {@link FragmentB#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MainFragment extends Fragment {
+public class FragmentB extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,7 +26,7 @@ public class MainFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public MainFragment() {
+    public FragmentB() {
         // Required empty public constructor
     }
 
@@ -40,11 +36,11 @@ public class MainFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MainFragment.
+     * @return A new instance of fragment FragmentB.
      */
     // TODO: Rename and change types and number of parameters
-    public static MainFragment newInstance(String param1, String param2) {
-        MainFragment fragment = new MainFragment();
+    public static FragmentB newInstance(String param1, String param2) {
+        FragmentB fragment = new FragmentB();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,16 +61,6 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        view.findViewById(R.id.button_a).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_mainFragment2_to_fragmentA));
-        view.findViewById(R.id.button_b).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_mainFragment2_to_fragmentB));
-        view.findViewById(R.id.button_c).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_mainFragment2_to_dialogFragmentA));
-        view.findViewById(R.id.button_onboarding).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_mainFragment2_to_nav_graph_onboarding));
+        return inflater.inflate(R.layout.fragment_b, container, false);
     }
 }

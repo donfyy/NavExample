@@ -3,9 +3,6 @@ package com.example.navexample;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
-
-import com.example.navexample.fragment.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
 

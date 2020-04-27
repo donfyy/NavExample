@@ -1,8 +1,11 @@
-package com.example.navexample.fragment;
+package com.example.navexample.main;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +15,10 @@ import com.example.navexample.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FragmentB#newInstance} factory method to
+ * Use the {@link FragmentAA#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentB extends Fragment {
+public class FragmentAA extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +29,7 @@ public class FragmentB extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FragmentB() {
+    public FragmentAA() {
         // Required empty public constructor
     }
 
@@ -36,11 +39,11 @@ public class FragmentB extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentB.
+     * @return A new instance of fragment OnbFragmentAA.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentB newInstance(String param1, String param2) {
-        FragmentB fragment = new FragmentB();
+    public static FragmentAA newInstance(String param1, String param2) {
+        FragmentAA fragment = new FragmentAA();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +64,18 @@ public class FragmentB extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_b, container, false);
+        return inflater.inflate(R.layout.fragment_a_a, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        view.findViewById(R.id.back_to_main).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(MainFragmentDirections.actionBackToMain());
+            }
+        });
+        view.findViewById(R.id.button_a_a_a).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_fragmentAA_to_fragmentAAA));
     }
 }

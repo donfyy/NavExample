@@ -6,7 +6,7 @@
     app:startDestination="@id/mainFragment2">
     <fragment
         android:id="@+id/mainFragment2"
-        android:name="com.example.navexample.fragment.MainFragment"
+        android:name="com.example.navexample.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main">
         <action
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentA"
-        android:name="com.example.navexample.fragment.FragmentA"
+        android:name="com.example.navexample.main.FragmentA"
         android:label="fragment_a"
         tools:layout="@layout/fragment_a">
         <action
@@ -33,17 +33,27 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentB"
-        android:name="com.example.navexample.fragment.FragmentB"
+        android:name="com.example.navexample.main.FragmentB"
         android:label="fragment_b"
-        tools:layout="@layout/fragment_b" />
+        tools:layout="@layout/fragment_b" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue='"三世书"' />
+        <argument
+            android:name="age"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
     <dialog
         android:id="@+id/dialogFragmentA"
-        android:name="com.example.navexample.fragment.dialog.DialogFragmentA"
+        android:name="com.example.navexample.main.dialog.DialogFragmentA"
         android:label="fragment_dialog_a"
         tools:layout="@layout/fragment_dialog_a" />
     <fragment
         android:id="@+id/fragmentAA"
-        android:name="com.example.navexample.fragment.FragmentAA"
+        android:name="com.example.navexample.main.FragmentAA"
         android:label="fragment_a_a"
         tools:layout="@layout/fragment_a_a" >
         <action
@@ -65,7 +75,7 @@ java.lang.IllegalArgumentException: navigation destination com.example.navexampl
         app:popUpToInclusive="true" />
     <fragment
         android:id="@+id/fragmentAAA"
-        android:name="com.example.navexample.fragment.FragmentAAA"
+        android:name="com.example.navexample.main.FragmentAAA"
         android:label="fragment_a_a_a"
         tools:layout="@layout/fragment_a_a_a" />
     <include app:graph="@navigation/nav_graph_onboarding" />
