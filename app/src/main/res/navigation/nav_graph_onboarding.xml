@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_onboarding"
     app:startDestination="@id/onbFragmentMain">
+    <action
+        android:id="@+id/action_onbFragmentAA_to_onbFragmentMain"
+        app:popUpTo="@id/onbFragmentMain"
+        app:popUpToInclusive="true" />
     <fragment
         android:id="@+id/onbFragmentMain"
         android:name="com.example.navexample.onboarding.OnbFragmentMain"
@@ -26,10 +30,5 @@
         android:id="@+id/onbFragmentAA"
         android:name="com.example.navexample.onboarding.OnbFragmentAA"
         android:label="OnbFragmentAA"
-        tools:layout="@layout/onboarding_fragment_a_a">
-        <action
-            android:id="@+id/action_onbFragmentAA_to_onbFragmentMain"
-            app:popUpTo="@id/onbFragmentMain"
-            app:popUpToInclusive="true" />
-    </fragment>
+        tools:layout="@layout/onboarding_fragment_a_a" />
 </navigation>
