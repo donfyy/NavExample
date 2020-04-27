@@ -8,6 +8,10 @@
         android:id="@+id/action_onbFragmentAA_to_onbFragmentMain"
         app:popUpTo="@id/onbFragmentMain"
         app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/back_to_onbFragmentMain"
+        app:popUpTo="@id/onbFragmentMain"
+        app:popUpToInclusive="true" />
     <fragment
         android:id="@+id/onbFragmentMain"
         android:name="com.example.navexample.onboarding.OnbFragmentMain"

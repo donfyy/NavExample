@@ -45,6 +45,9 @@
             android:name="age"
             app:argType="integer"
             android:defaultValue="0" />
+        <argument
+            android:name="user"
+            app:argType="com.example.navexample.main.model.User" />
     </fragment>
     <dialog
         android:id="@+id/dialogFragmentA"
